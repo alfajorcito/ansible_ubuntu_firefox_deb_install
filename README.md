@@ -1,4 +1,4 @@
-# ansible_ubuntu_
+# ansible_ubuntu_firefox_deb_install
 Ansible role installing Firefox using the firefox deb package provided by the Ubuntu Mozilla Team.
 
 Useful in case you do not want to install Firefox using the default Ubuntu 22 firefox deb (which is just a wrapper for the firefox snap.)
