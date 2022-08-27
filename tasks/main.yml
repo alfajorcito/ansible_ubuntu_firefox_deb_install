@@ -1,0 +1,16 @@
+---
+- name: add mozillateam PPA repository
+  apt_repository:
+    repo: "ppa:mozillateam/ppa"
+    state: present
+
+- name: copy apt preferences file (high priority for PPA repo, disable default Ubuntu repofor firefox package)
+  copy:
+    src: mozillateamppa
+    dest: /etc/apt/preferences.d/
+
+- name: run apt-get update and install firefox package from PPA repo (upgrade to latest version if already installed)
+  apt:
+    update_cache: yes
+    name: firefox
+    state: latest
